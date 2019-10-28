@@ -1,5 +1,5 @@
 --Begin Core.lua By #MaTaDoRTeaM
-local SUDO = sudo_id
+local SUDO = 300131107
 local function getindex(t,id) 
 	for i,v in pairs(t) do 
 		if v == id then 
