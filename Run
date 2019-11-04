@@ -1,9 +1,11 @@
+echo Setting Chmod 
 sudo chmod 777 II
-sudo chmod 777 /ibot/keepercli/kp.sh
-sudo chmod 777 /ibot/helperapi/hp.sh
+sudo chmod 777 /keepercli/kp.sh
+sudo chmod 777 /helperapi/hp.sh
 echo All Chmods Set
+echo setting packages
 ./ibot/II
 echo All Packages Set
-./ibot/keepercli/kp.sh install
-./ibot/helperapi/kp.sh install
+./keepercli/kp.sh install
+./helperapi/kp.sh install
 echo All Bot Config Set
