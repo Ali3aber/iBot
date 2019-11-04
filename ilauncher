@@ -23,9 +23,9 @@ white() {
   printf '\e[1;37m%s\n\e[0;39;49m' "$@"
 }
 if [ "$1" = "keeper" ]; then
-	install
+	keeper
 elif [ "$1" = "helper" ]; then
-	update
+	helper
 else
 
 green "Ali3aber is Running iBot Service"
