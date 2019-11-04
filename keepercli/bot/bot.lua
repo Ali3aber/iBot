@@ -83,7 +83,6 @@ function create_config( )
     "BanHammer",
     "Plugins",
     "Administrative",
-    "Help",
     "Limitmember",
     "Rank",
     "Openchat",
