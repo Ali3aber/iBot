@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 cd $HOME/ibot
-red "Running Ali3aber Fully ilauncher"
+echo Running Ali3aber Fully ilauncher
 sudo chmod 777 II
 sudo chmod 777 keepercli/kp.sh
 sudo chmod 777 helperapi/hp.sh
