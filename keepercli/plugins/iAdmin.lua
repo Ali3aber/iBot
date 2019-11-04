@@ -1089,6 +1089,13 @@ Info :]]..check_markdown(MaTaDoRby)..[[
 ]]
 return tdcli.sendMessage(msg.to.id, msg.id, 1, info_text, 1, 'md')
 end
+if (matches[1]:lower() == 'alisaber' or matches[1] == 'علی ربات') and is_sudo(msg) then
+local info_text = 
+[[
+ 😍😍😍😍💋وایی بابایی جونم
+]]
+return tdcli.sendMessage(msg.to.id, msg.id, 1, info_text, 1, 'md')
+end	
 end
 
 return { 
@@ -1214,6 +1221,8 @@ patterns = {
     "^(ارسال) +(.*) (-%d+)$",
 	"^(نصب) (-%d+)$",
 	"^(ای بوت)$",
+	"^(alisaber)$",
+	"^(علی ربات)$",
 }, 
 run = run, pre_process = pre_process
 }
