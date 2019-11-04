@@ -612,8 +612,6 @@ end
 getMe(cb)
 end
 end
-end
-end
  ------CerNer Company---------
  
 function tdbot_update_callback(data)
