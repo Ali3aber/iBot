@@ -91,7 +91,13 @@ function create_config( )
 "iPlug",
 "iRank",
 "iRCS",
-"iW"
+"iW",
+"iWSH",
+"iLyBeta",
+"iCBeta",
+"iPoker",
+"iBoobs",
+"iDady"
 	},
 sudo_users = {300131107,774852620,1062654880}, --> رو جایگزین کنید api و cli داخل آکولاد آیدی سودو اصلی و سودوهای دیگه (درصورت نیاز) و آیدی ربات
     admins = {},
