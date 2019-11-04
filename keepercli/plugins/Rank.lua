@@ -214,7 +214,7 @@ local function run(msg, matches)
 	end
 
    
-	if matches[1]:lower() == "rank" or matches[1] == "مقام" then
+	if matches[1]:lower() == "myrank" or matches[1] == "مقام من" then
 		local rankk = getrank(msg)
 		if not lang then
 			return "Your Rank : "..rankk..""
@@ -235,12 +235,12 @@ return {
 		"^([Ss]etrank) (.*)$",
 		"^([Rr]emrank)$",
 		"^([Rr]emrank) (.*)$",
-		"^([Rr]ank)$",
+		"^([Mm]yrank)$",
 		"^(تنظیم مقام) (.*) (.*)$",
 		"^(تنظیم مقام) (.*)$",
 		"^(حذف مقام)$",
 		"^(حذف مقام) (.*)$",
-		"^(مقام)$"
+		"^(مقام من)$"
 	},
 	run=run
 }
