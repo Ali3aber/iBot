@@ -61,7 +61,10 @@ let COUNTER=COUNTER+1
 done
 }
 helper() {
-./helperapi.sh
+COUNTER=1
+while(true) do
+./helpercli/hp.sh
+let COUNTER=COUNTER+1 
 }
 red() {
   printf '\e[1;31m%s\n\e[0;39;49m' "$@"
@@ -75,9 +78,8 @@ white() {
 red "iBot All In One Launched"
 green ">>>>By @Remember_M_e<<<<"
 white "in the Ali3aber Name"
-sudo chmod 777 II
 sudo chmod 777 keepercli/kp.sh
-sudo chmod 777 helperapi/hp.sh
+sudo chmod 777 helpercli/hp.sh
 sudo chmod 777 keepercli/libs/tgcli
 sudo apt-get update
 sudo apt-get upgrade
