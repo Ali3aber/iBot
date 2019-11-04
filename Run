@@ -4,7 +4,7 @@ sudo chmod 777 keepercli/kp.sh
 sudo chmod 777 helperapi/hp.sh
 echo All Chmods Set
 echo setting packages
-./ibot/II
+./II
 echo All Packages Set
 ./keepercli/kp.sh install
 ./helperapi/hp.sh install
