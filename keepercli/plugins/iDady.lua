@@ -1,5 +1,5 @@
 local function run(msg, matches)
-if matches[1] == "علی صابر" then
+if matches[1] == "saber" then
       if msg.to.type == 'channel' or 'chat' then
             local answers = {'🥰😍وای باباییم😍😍','باباییه من'}
             return answers[math.random(#answers)]
@@ -17,7 +17,7 @@ return {
   usage = "chat with robot",
   patterns = {
   "alisaber$"
-  "علی صابر$"
+  "saber"
       }, 
   run = run
 }
