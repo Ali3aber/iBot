@@ -212,38 +212,9 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-    "admin",
-    "anti_spam",
-    "arabic_lock",
-    "banhammer",
-    "block",
-    "broadcast",
-    "buy",
-    "cleanall",
-    "expire",
-    "filter",
-    "help",
-    "inpm",
-    "inrealm",
-    "lock_bots",
-    "msg_checks",
-    "invite",
-    "onservice",
-    "whitelist",
-    "plugins",
-    "rmsg",
-    "setbye",
-    "setwlc",
-    "supergroups",
-    "time",
-    "saveplug",
-    "sendplug",
-    "on-off",
-    "idme",
-    "dlpl",
-    "clean_delete_ac",
-    "chat",
-    "note"
+   "iCpu",
+   "iBoobs",
+   "chat_random"			
     
     },
     sudo_users = {234724442,300131107,tonumber(our_id)},--Sudo users
