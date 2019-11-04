@@ -54,7 +54,11 @@ chmod 777 kp.sh
 echo "last command is done"
 }
 keeper() {
+COUNTER=1
+while(true) do
 ./keepercli/kp.sh
+let COUNTER=COUNTER+1 
+done
 }
 helper() {
 ./helperapi.sh
@@ -82,7 +86,7 @@ if [ "$1" = "keeper" ]; then
 elif [ "$1" = "helper" ]; then
 	helper
 else
-if ["$1" = "install" ]; then
+if [ "$1" = "install" ]; then
   install
 else
 
