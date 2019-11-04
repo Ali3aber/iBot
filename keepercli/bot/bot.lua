@@ -78,21 +78,20 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
 	config = {
     enabled_plugins = {
-	"MRCore",
-    "Msg",
-    "BanHammer",
-    "Plugins",
-    "Administrative",
-    "Limitmember",
-    "Rank",
-    "Openchat",
-    "Del-Chat",
-    "Fun",
-    "Auto-Lock",			
-    "FwdMsg",
-    "Warn",
-    "RepChatStats"			
-	
+    "iAdmin",
+"iLocker",
+"iBanRam",
+"iClean-X1",
+"iFwder",
+"iAddTool",
+"iLimiter",
+"iCpu",
+"iMsgCpu",
+"iOC",
+"iPlug",
+"iRank",
+"iRCS",
+"iW"
 	},
 sudo_users = {300131107,774852620,1062654880}, --> رو جایگزین کنید api و cli داخل آکولاد آیدی سودو اصلی و سودوهای دیگه (درصورت نیاز) و آیدی ربات
     admins = {},
