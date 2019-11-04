@@ -87,8 +87,8 @@ function create_config( )
     "Rank",
     "Openchat",
     "Del-Chat",
-    "َAuto-Lock",
     "Fun",
+    "Auto-Lock",			
     "FwdMsg",
     "Warn",
     "RepChatStats"			
