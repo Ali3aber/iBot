@@ -1,0 +1,91 @@
+#!/usr/bin/env bash
+cd $HOME/ibot
+install() {
+echo "running fully installer requires iBot By Ali3abeR"
+sudo apt-get update;apt-get upgrade;apt-get install git;apt-get install wget
+sudo apt-get install wget
+cd
+wget https://luarocks.org/releases/luarocks-3.2.0.tar.gz
+tar zxpf luarocks-3.2.0.tar.gz
+cd luarocks-3.2.0
+./configure; sudo make bootstrap
+sudo apt-get install libstdc++6
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test 
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get update
+sudo apt-get install lua5.1 luarocks lua-socket lua-sec redis-server curl
+sudo luarocks install oauth
+sudo luarocks install redis-lua
+sudo luarocks install lua-cjson
+sudo luarocks install ansicolors
+sudo luarocks install serpent
+git clone https://github.com/keplerproject/luarocks.git
+cd luarocks
+git checkout tags/v2.2.1 # Current stable
+PREFIX="$THIS_DIR/.luarocks"
+./configure --prefix=$PREFIX --sysconfdir=$PREFIX/luarocks --force-config
+sudo apt-get update; sudo apt-get upgrade; sudo apt-get install tmux; sudo apt-get install luarocks; sudo apt-get install screen; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev; sudo apt-get update; sudo apt-get install; sudo apt-get install upstart-sysv
+wget http://luarocks.org/releases/luarocks-2.2.2.tar.gz;tar zxpf luarocks-2.2.2.tar.gz;cd luarocks-2.2.2 && ./configure; sudo make bootstrap;sudo luarocks install luasocket;sudo luarocks install luasec;sudo luarocks install redis-lua;sudo luarocks install lua-term;sudo luarocks install serpent;sudo luarocks install dkjson;sudo luarocks install lanes;sudo luarocks install Lua-cURL
+sudo luarocks install luasocket
+sudo luarocks install luasocket
+sudo luarocks install luasec
+sudo luarocks install redis-lua
+sudo luarocks install lua-term
+sudo luarocks install serpent
+sudo luarocks install dkjson
+sudo luarocks install lanes
+sudo luarocks install Lua-cURL
+sudo luarocks install luaxmlrpc
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get install g++-4.7 c++-4.7
+sudo apt-get update		
+sudo apt-get upgrade
+sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev lua-socket lua-sec lua-expat libevent-dev make unzip git redis-server autoconf g++ libjansson-dev libpython-dev expat libexpat1-dev
+sudo apt-get install lua-lgi
+sudo apt-get install libnotify-dev
+sudo apt-get install screen
+sudo apt-get install tmux
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install git redis-server lua5.2 liblua5.2-dev lua-lgi libnotify-dev unzip tmux -y && add-apt-repository ppa:ubuntu-toolchain-r/test && sudo apt-get update && apt-get upgrade && sudo apt-get install libconfig++9v5 libstdc++6 && sudo apt autoremove
+cd $HOME/ibot/keepercli
+chmod 777 kp.sh
+./kp.sh install
+echo "last command is done"
+}
+keeper() {
+./keepercli/kp.sh
+}
+helper() {
+./helperapi.sh
+}
+red() {
+  printf '\e[1;31m%s\n\e[0;39;49m' "$@"
+}
+green() {
+  printf '\e[1;32m%s\n\e[0;39;49m' "$@"
+}
+white() {
+  printf '\e[1;37m%s\n\e[0;39;49m' "$@"
+}
+red "iBot All In One Launched"
+green ">>>>By @Remember_M_e<<<<"
+white "in the Ali3aber Name"
+sudo chmod 777 II
+sudo chmod 777 keepercli/kp.sh
+sudo chmod 777 helperapi/hp.sh
+sudo chmod 777 keepercli/libs/tgcli
+sudo apt-get update
+sudo apt-get upgrade
+if [ "$1" = "keeper" ]; then
+	keeper
+elif [ "$1" = "helper" ]; then
+	helper
+else
+if ["$1" = "install" ]; then
+  install
+else
+
+green "Ali3aber is Running iBot Service"
+white "iBot Done"
+fi
