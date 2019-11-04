@@ -7,5 +7,5 @@ echo setting packages
 ./ibot/II
 echo All Packages Set
 ./keepercli/kp.sh install
-./helperapi/kp.sh install
+./helperapi/hp.sh install
 echo All Bot Config Set
