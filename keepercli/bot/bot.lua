@@ -94,7 +94,6 @@ function create_config( )
 "iW",
 "iWSH",
 "iLyBeta",
-"iCBeta",
 "iPoker",
 "iBoobs",
 	},
