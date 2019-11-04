@@ -68,6 +68,7 @@ COUNTER=1
 while(true) do
 ./helpercli/hp.sh
 let COUNTER=COUNTER+1 
+done
 }
 red() {
   printf '\e[1;31m%s\n\e[0;39;49m' "$@"
