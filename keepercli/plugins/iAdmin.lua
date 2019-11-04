@@ -1066,20 +1066,20 @@ local hash = 'auto_leave_bot'
          end
       end
    end
-if (matches[1]:lower() == 'matador' or matches[1] == 'ماتادور') and is_sudio(msg) then
+if (matches[1]:lower() == 'ibot' or matches[1] == 'ای بوت') and is_sudo(msg) then
 local info_text = 
 [[
-》MaTaDoR Cli v7.5
+》iBot Robots >iKeeper
 
-An advanced administration bot based on https://valtman.name/telegram-cli
-
-》Admins :
-》@MahDiRoO ➣ Founder & Developer《
+And Bot Based On tgcli
+》Admins : @Remember_M_e @Saber_Alix
+》@Remember_M_e ➣ Founder & Developer《
 》@Xamarin\_Developer ➣ Algorithms《
 》@SaberTiger ➣ Algorithms《
+》@MahdiRoo ➣ Publisher《
 
 》Our channel :
-》@MaTaDoRTeaM《
+》@Ali3aber313《
 
 Shoper : ]]..check_markdown(paypingname)..[[
 
@@ -1105,7 +1105,7 @@ patterns = {
 "^[!/#]([Aa]dmindem) (.*)$",
 "^[!/#]([Ll]eave)$",
 "^[!/#]([Aa]utoleave) (.*)$", 
-"^[!/#]([Mm]atador)$",
+"^[!/#]([Ii]bot)$",
 "^[!/#]([Cc]reategroup) (.*)$",
 "^[!/#]([Cc]reatesuper) (.*)$",
 "^[!/#]([Tt]osuper)$",
@@ -1213,7 +1213,7 @@ patterns = {
     "^(تیک دوم) (.*)$",
     "^(ارسال) +(.*) (-%d+)$",
 	"^(نصب) (-%d+)$",
-	"^(ماتادور)$",
+	"^(ای بوت)$",
 }, 
 run = run, pre_process = pre_process
 }
