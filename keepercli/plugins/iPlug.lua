@@ -41,7 +41,7 @@ local function list_all_plugins(only_enabled, msg)
 end
 
 local function list_plugins(only_enabled, msg)
-  local text = '> *Ɗσηє!*\n`MαƬαƊσR Rєℓσα∂ :)`'
+  local text = '> *Ɗσηє!*\n` Rєℓσα∂ :)`'
   tdcli.sendMessage(msg.to.id, msg.id_, 1, text, 1, 'md')
 end
 
