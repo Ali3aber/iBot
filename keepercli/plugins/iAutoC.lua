@@ -1,0 +1,1 @@
+--this plugin write by ali3aber, how it work? you can set time to auto clean your group msgs; just need a icleaner bot to run it.
