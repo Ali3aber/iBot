@@ -1072,8 +1072,8 @@ local info_text =
 》iBot Robots >iKeeper
 
 And Bot Based On tgcli
-》Admins : @Remember_M_e @Saber_Alix
-》@Remember_M_e ➣ Founder & Developer《
+》Admin : @alisaber313 
+》@Alisaber313 ➣ Founder & Developer《
 》@Xamarin\_Developer ➣ Algorithms《
 》@SaberTiger ➣ Algorithms《
 》@MahdiRoo ➣ Publisher《
@@ -1089,7 +1089,7 @@ Info :]]..check_markdown(MaTaDoRby)..[[
 ]]
 return tdcli.sendMessage(msg.to.id, msg.id, 1, info_text, 1, 'md')
 end
-if (matches[1]:lower() == 'alisaber' or matches[1] == 'علی ربات') and is_sudo(msg) then
+if (matches[1]:lower() == 'alisaber' or matches[1] == 'علی ربات') and is_mod(msg) then
 local info_text = 
 [[
  😍😍😍😍💋وایی بابایی جونم
