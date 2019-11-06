@@ -80,7 +80,7 @@ local is_channel = msg.to.type == "channel"
 local is_chat = msg.to.type == "chat"
 if redis:get("lc_ato:"..msg.chat_id_) then
 tdcli.sendMessage(msg.chat_id_, 0, 1, '!rmsgall'..redis:get("atolc2"..msg.chat_id_)..'!rmsgall')
-tdcli.sendMessage(msg.chat_id_, 0, 1, '!rmsgall'
+tdcli.sendMessage(msg.chat_id_, 0, 1, '!rmsgall')
 if not is_mod(msg) then
 if is_channel then
 del_msg(msg.chat_id_, tonumber(msg.id))
