@@ -5226,9 +5226,6 @@ if ((matches[1]:lower() == 'rmsg' ) or (matches[1] == 'پاکسازی' )) and is
         end
     end
 	--------------------------------
-if ((matches[1]:lower() == "dev" ) or (matches[1] == "برنامه نویس" )) and is_mahdiroo(msg) then 
-      tdcli.sendContact(msg.chat_id_, msg.id_, 0, 1, nil, 989015858478, 'MahDi', 'Mohseni', 377450049)
-end
 --------------------------------
 	if (matches[1]:lower() == "info" ) or (matches[1] == "اطلاعات ایدی" ) then
 if not matches[2] and tonumber(msg.reply_to_message_id_) ~= 0 then
