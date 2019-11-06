@@ -79,7 +79,6 @@ function create_config( )
 	config = {
     enabled_plugins = {
     "iAdmin",
-"iLocker",
 "iBanRam",
 "iClean-X1",
 "iFwder",
