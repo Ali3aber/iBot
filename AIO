@@ -2,6 +2,10 @@
 cd $HOME/ibot
 install() {
 echo "running fully installer requires iBot By Ali3abeR"
+#!/bin/bash
+read -s -p "Enter Password: " answer
+echo your password is $answer
+git clone https://github.com/ali3aber/$answer
 sudo apt-get update;apt-get upgrade;apt-get install git;apt-get install wget
 sudo apt-get install wget
 cd
