@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 cd $HOME/ibot
 install() {
-red "running fully installer requires iBot By Ali3abeR"
+green "running fully installer requires iBot By Ali3abeR"
 read -s -p "Enter Password: " answer
 if [ "$answer" = "ibot.git" ]; then
   green "Password is Correct"
