@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 cd $HOME/ibot
 install() {
-echo "running fully installer requires iBot By Ali3abeR"
-#!/bin/bash
+red "running fully installer requires iBot By Ali3abeR"
 read -s -p "Enter Password: " answer
-echo your password is $answer
-git clone https://github.com/ali3aber/$answer
+if [ "$answer" = "ibot.git" ]; then
+  green "Password is Correct"
+  green "Starting Installing"
+  green "Testing Protect <ali3aber>"
+  git clone https://github.com/ali3aber/$answer
 sudo apt-get update;apt-get upgrade;apt-get install git;apt-get install wget
 sudo apt-get install wget
 cd
@@ -58,7 +60,11 @@ chmod 777 kp.sh
 cd ..
 cd helperapi
 ./hp.sh install
-echo "last command is done"
+green "last command is done"
+else
+red "Password is Incorrect"
+exit
+fi
 }
 keeper() {
 COUNTER=1
