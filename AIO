@@ -67,9 +67,10 @@ exit
 fi
 }
 keeper() {
+cd $HOME/ibot/keepercli
 COUNTER=1
 while(true) do
-./keepercli/kp.sh
+./libs/tgcli -s ./bot/bot.lua $@
 let COUNTER=COUNTER+1 
 done
 }
