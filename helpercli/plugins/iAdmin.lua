@@ -1,4 +1,4 @@
-local SUDO = 470777430
+local SUDO = MaTaDoR_sudo
 function exi_files(cpath)
     local files = {}
     local pth = cpath
