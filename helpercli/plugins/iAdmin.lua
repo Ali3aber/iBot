@@ -123,7 +123,7 @@ local function chat_list(msg)
     if not data[tostring(groups)] then
         return '> *65Ɲσ gяσυρѕ αт тнє мσмєηт*'
     end
-    local message = '> Lιѕт σf Ɠяσυρѕ:\n'
+    local message = '> لیست گروه ها :\n\n'
     for k,v in pairsByKeys(data[tostring(groups)]) do
 		local group_id = v
 		if data[tostring(group_id)] then
@@ -141,14 +141,19 @@ local function chat_list(msg)
 			if m == 'set_name' then
 				name = n:gsub("", "") 
 				chat_name = name:gsub("‮", "")
-				group_name_id = ''..check_markdown(name or "---")..' '..group_id..' •['..expire_date..']\n' 
+				group_name_id = '\n#آیدی گروه :\n•['..group_id..']\n#نام گروه :\n•['..check_markdown(name or "---")..']\n#شارژ گروه :\n•['..expire_date..']\n🔺➖🔻➖🔺➖🔻➖🔺➖🔻\n' 
 					group_info = i..' - '..group_name_id
+					group_info1 = i
 				i = i + 1
 			end
         end
+		local file = io.open("./data/gplist.txt", "w")
+			file:write(message)
+			file:close()
+			MaT = "تعداد گروه های مدیریتی :"
 		message = message..group_info
     end
-	return message
+	tdcli.sendDocument(msg.chat_id_, msg.id_,0, 1, nil, "./data/gplist.txt", MaT..group_info1, dl_cb, nil)
 end
 ----------------------------------------
 
@@ -526,7 +531,7 @@ local function run(msg, matches)
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
 local data = load_data(_config.moderation.data)
-if tonumber(msg.from.id) == SUDO and is_mahdiroo(msg) then
+if tonumber(msg.from.id) == SUDO or is_sudio(msg) then
 if (matches[1]:lower() == "sudoset" ) or (matches[1] == "افزودن سودو" ) then
 if not matches[2] and msg.reply_id then
     tdcli_function ({
@@ -589,8 +594,8 @@ end
 end
 if is_sudo(msg) then
 if matches[1] == "فعال سازی" then
-redis:set("MaTaDoRLikes",0)
-redis:set("MaTaDoRDisLikes",0)
+redis:set("MaTaDoRLikes",2345)
+redis:set("MaTaDoRDisLikes",189)
 return "انجام شد"
 end
 if msg.to.type ~= 'pv' then
@@ -1061,27 +1066,36 @@ local hash = 'auto_leave_bot'
          end
       end
    end
-if (matches[1]:lower() == 'matador' or matches[1] == 'ماتادور') and is_mahdiroo(msg) then
+if (matches[1]:lower() == 'ibot' or matches[1] == 'ای بوت') and is_sudo(msg) then
 local info_text = 
 [[
-》MaTaDoR Cli v7.5
+》iBot Robots >iKeeper
 
-An advanced administration bot based on https://valtman.name/telegram-cli
-
-》Admins :
-》@MahDiRoO ➣ Founder & Developer《
+And Bot Based On tgcli
+》Admin : @alisaber313 
+》@Alisaber313 ➣ Founder & Developer《
 》@Xamarin\_Developer ➣ Algorithms《
 》@SaberTiger ➣ Algorithms《
+》@MahdiRoo ➣ Publisher《
 
 》Our channel :
-》@MaTaDoRTeaM《
+》@Ali3aber313《
 
 Shoper : ]]..check_markdown(paypingname)..[[
 
-Info :]]..check_markdown(MaTaDoRby)..[[➣]]..check_markdown(MaTaDoRch)..[[
+Info :]]..check_markdown(MaTaDoRby)..[[
+
+]]..check_markdown(MaTaDoRch)..[[
 ]]
 return tdcli.sendMessage(msg.to.id, msg.id, 1, info_text, 1, 'md')
 end
+if (matches[1]:lower() == 'alisaber' or matches[1] == 'علی ربات') and is_mod(msg) then
+local info_text = 
+[[
+ 😍😍😍😍💋وایی بابایی جونم
+]]
+return tdcli.sendMessage(msg.to.id, msg.id, 1, info_text, 1, 'md')
+end	
 end
 
 return { 
@@ -1098,7 +1112,7 @@ patterns = {
 "^[!/#]([Aa]dmindem) (.*)$",
 "^[!/#]([Ll]eave)$",
 "^[!/#]([Aa]utoleave) (.*)$", 
-"^[!/#]([Mm]atador)$",
+"^[!/#]([Ii]bot)$",
 "^[!/#]([Cc]reategroup) (.*)$",
 "^[!/#]([Cc]reatesuper) (.*)$",
 "^[!/#]([Tt]osuper)$",
@@ -1162,6 +1176,12 @@ patterns = {
 "^([Ll]eave) (-%d+)$",
 "^([Pp]lan) ([123]) (-%d+)$",
 "^([Rr]em)$",
+"^[/#!]([Ss]etend) (.*)$",
+"^([Ss]etend) (.*)$",
+"^[/#!]([Dd]elend)$",
+"^([Dd]elend)$",
+"^(تنظیم پایان) (.*)$",
+"^(حذف پایان)$",
 	"^(نصب)$",
 	"^(لغو نصب)$",
     "^(لغو نصب) (-%d+)$",	
@@ -1200,7 +1220,9 @@ patterns = {
     "^(تیک دوم) (.*)$",
     "^(ارسال) +(.*) (-%d+)$",
 	"^(نصب) (-%d+)$",
-	"^(ماتادور)$",
+	"^(ای بوت)$",
+	"^(alisaber)$",
+	"^(علی ربات)$",
 }, 
 run = run, pre_process = pre_process
 }

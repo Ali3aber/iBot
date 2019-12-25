@@ -2,6 +2,166 @@ local function modadd(msg)
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
     -- superuser and admins only (because sudo are always has privilege)
+    if not is_admin(msg) then
+   if not lang then
+        return '*#》Ƴσυ αяє ησт вσт αɗмιη 🚷*\n*〰〰〰〰〰〰〰〰*\n💠 `Run this command only for Admins and deputies is`'
+else
+     return '#》 `شما` #مدیر `گروه نیستید` 🚷\n*〰〰〰〰〰〰〰〰*\n💠 اجرای این دستور فقط برای مدیران و معاونان است.'
+    end
+end
+    local data = load_data(_config.moderation.data)
+  if data[tostring(msg.to.id)] then
+if not lang then
+   return '#》 *Ɠяσυρ ιѕ αƖяєαɗу αɗɗєɗ* ‼️\n*〰〰〰〰〰〰〰〰*\n💠 `The robot is already in the group, the robot was is no longer need to do not`'
+else
+return '#》 `ربات در` #لیست `گروه ربات از قبل بود` ‼️\n*〰〰〰〰〰〰〰〰*\n💠 ربات از قبل در لیست گروه های ربات بود است دیگر نیازی به این‌کار نیست.'
+  end
+end
+        -- create data array in moderation.json
+      data[tostring(msg.to.id)] = {
+			owners = {},
+			mods ={},
+			banned ={},
+			is_silent_users ={},
+			filterlist ={},
+			whitelist ={},
+			settings = {
+				set_name = msg.to.title,
+				lock_link = 'yes',
+				lock_tag = 'no',
+				lock_username = 'yes',
+				lock_spam = 'yes',
+				lock_webpage = 'yes',
+				lock_mention = 'no',
+				lock_markdown = 'no',
+				lock_flood = 'yes',
+				lock_bots = 'yes',
+				lock_pin = 'no',
+				welcome = 'no',
+				lock_join = 'no',
+				lock_edit = 'no',
+				lock_arabic = 'no',
+				lock_english = 'no',
+				lock_all = 'no',
+				num_msg_max = '50',
+				set_char = '1000',
+				time_check = '2',
+				},
+   mutes = {
+                  mute_video_self = 'yes',
+                  mute_forward = 'yes',
+                  mute_audio = 'no',
+                  mute_video = 'no',
+                  mute_contact = 'warn',
+                  mute_text = 'no',
+                  mute_photo = 'no',
+                  mute_gif = 'no',
+                  mute_location = 'warn',
+                  mute_document = 'no',
+                  mute_sticker = 'no',
+                  mute_voice = 'no',
+				  mute_all = 'no',
+				  mute_keyboard = 'warn',
+				  mute_game = 'no',
+				  mute_inline = 'warn',
+				  mute_tgservice = 'no',
+          }
+      }
+  save_data(_config.moderation.data, data)
+      local groups = 'groups'
+      if not data[tostring(groups)] then
+        data[tostring(groups)] = {}
+        save_data(_config.moderation.data, data)
+      end
+      data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
+      save_data(_config.moderation.data, data)
+    if not lang then
+  return '#》 *Ɠяσυρ нαѕ вєєη αɗɗєɗ* ✅🤖\n\n*Ɠяσυρ Ɲαмє :*'..msg.to.title..'\n*OяɗєяƁу :* [@'..check_markdown(msg.from.username or '')..'*|*`'..msg.from.id..'`]\n*〰〰〰〰〰〰〰〰*\n💠 `Group now to list the groups the robot was added`\n\n*Ɠяσυρ cнαяgєɗ 3 мιηυтєѕ  fσя ѕєттιηgѕ.*'
+else
+  return '#》 `گروه به` #لیست `گروه ربات اضافه شده` ✅🤖\n\n*اسم گروه :*'..msg.to.title..'\n*توسط :* [@'..check_markdown(msg.from.username or '')..'*|*`'..msg.from.id..'`]\n*〰〰〰〰〰〰〰〰*\n💠 گروه هم اکنون به لیست گروه ربات اضافه شد.\n\n_گروه به مدت_ *3* _دقیقه برای اجرای تنظیمات شارژ می‌باشد._'
+end
+end
+local function modrem(msg)
+local hash = "gp_lang:"..msg.to.id
+local lang = redis:get(hash)
+    -- superuser and admins only (because sudo are always has privilege)
+    local data = load_data(_config.moderation.data)
+    local receiver = msg.to.id
+  if not data[tostring(msg.to.id)] then
+  if not lang then
+    return '#》 *Ɠяσυρ ιѕ ησт αɗɗєɗ* 🚫\n*〰〰〰〰〰〰〰〰*\n💠 `Group from the first to the group list, the robot was not added`'
+else
+    return '#》 `گروه در` #لیست `گروه ربات  نیست` 🚫\n*〰〰〰〰〰〰〰〰*\n💠 گروه از اول به لیست گروه ربات اضافه نشده است .'
+   end
+  end
+
+  data[tostring(msg.to.id)] = nil
+  save_data(_config.moderation.data, data)
+     local groups = 'groups'
+      if not data[tostring(groups)] then
+        data[tostring(groups)] = nil
+        save_data(_config.moderation.data, data)
+      end
+       data[tostring(groups)][tostring(msg.to.id)] = nil
+      save_data(_config.moderation.data, data)
+ if not lang then
+  return '#》 *Ɠяσυρ нαѕ вєєη яємσνєɗ* ❌🤖\n\n*Ɠяσυρ Ɲαмє :*'..msg.to.title..'\n*OяɗєяƁу :* [@'..check_markdown(msg.from.username or '')..'*|*`'..msg.from.id..'`]\n*〰〰〰〰〰〰〰〰*\n💠 `The group now from the list of groups, the robot was removed`'
+ else
+  return '#》 `گروه از` #لیست `گروه های ربات حدف شد` ❌🤖\n\n*اسم گروه :*'..msg.to.title..'\n*توسط :* [@'..check_markdown(msg.from.username or '')..'*|*`'..msg.from.id..'`]\n*〰〰〰〰〰〰〰〰*\n💠 گروه هم اکنون از لیست گروه ربات حذف شد.'
+end
+end
+----------------------------------------
+ local function config_cb(arg, data)
+local hash = "gp_lang:"..arg.chat_id
+local lang = redis:get(hash)
+  --print(serpent.block(data))
+   for k,v in pairs(data.members_) do
+   local function config_mods(arg, data)
+       local administration = load_data(_config.moderation.data)
+if data.username_ then
+user_name = '@'..check_markdown(data.username_)
+else
+user_name = check_markdown(data.first_name_)
+end
+if administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] then
+    return
+   end
+administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] = user_name
+    save_data(_config.moderation.data, administration)
+   end
+tdcli_function ({
+    ID = "GetUser",
+    user_id_ = v.user_id_
+  }, config_mods, {chat_id=arg.chat_id,user_id=v.user_id_})
+ 
+if data.members_[k].status_.ID == "ChatMemberStatusCreator" then
+owner_id = v.user_id_
+   local function config_owner(arg, data)
+ -- print(serpent.block(data))
+       local administration = load_data(_config.moderation.data)
+if data.username_ then
+user_name = '@'..check_markdown(data.username_)
+else
+user_name = check_markdown(data.first_name_)
+end
+if administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] then
+    return
+   end
+administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = user_name
+    save_data(_config.moderation.data, administration)
+   end
+tdcli_function ({
+    ID = "GetUser",
+    user_id_ = owner_id
+  }, config_owner, {chat_id=arg.chat_id,user_id=owner_id})
+   end
+end
+ if not lang then
+    return tdcli.sendMessage(arg.chat_id, "", 0, "*AƖƖ gяσυρ αɗмιηѕ нαѕ вєєη ρяσмσтєɗ αηɗ gяσυρ cяєαтσя ιѕ ησω gяσυρ σωηєя*👤😎", 0, "md")
+else
+    return tdcli.sendMessage(arg.chat_id, "", 0, "`تمام ادمین های گروه به مقام مدیر منتصب شدند و سازنده گروه به مقام مالک گروه منتصب شد`👤😎", 0, "md")
+     end
+ end
 if (matches[1]:lower() == "setlang") and is_owner(msg) then
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -16,7 +176,7 @@ local lang = redis:get(hash)
  redis:del(hash)
 return "_Group Language Set To:_ EN"
 end
- end
+ 
 ----------------------------------------
 return {
 patterns ={
