@@ -80,7 +80,8 @@ function create_config( )
     enabled_plugins = {
     "iAdmin",
 "iClean-X2",
-"iHelp"
+"iHelp",
+"iCpu"
 	},
 sudo_users = {300131107,774852620,1062654880,840965155}, --> رو جایگزین کنید api و cli داخل آکولاد آیدی سودو اصلی و سودوهای دیگه (درصورت نیاز) و آیدی ربات
     admins = {},
