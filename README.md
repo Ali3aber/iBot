@@ -1,5 +1,5 @@
 # iBot
-if you wanna install 
+if you wanna install , 
 just download AIO file
 and give access to file
 and ./AIO install
