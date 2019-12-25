@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
 cd $HOME/ibot
 install() {
-green "running fully installer requires iBot By Ali3abeR"
-read -s -p "Enter Password: " answer
-if [ "$answer" = "ibot.git" ]; then
-  green "Password is Correct"
-  green "Starting Installing"
-  green "Testing Protect <ali3aber>"
-  git clone https://github.com/ali3aber/$answer
+echo "running fully installer requires iBot By Ali3abeR"
 sudo apt-get update;apt-get upgrade;apt-get install git;apt-get install wget
 sudo apt-get install wget
 cd
@@ -57,20 +51,14 @@ sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install git redis
 cd $HOME/ibot/keepercli
 chmod 777 kp.sh
 ./kp.sh install
-cd ..
-cd helperapi
+cd $HOME/ibot/helpercli
 ./hp.sh install
-green "last command is done"
-else
-red "Password is Incorrect"
-exit
-fi
+echo "last command is done"
 }
 keeper() {
-cd $HOME/ibot/keepercli
 COUNTER=1
 while(true) do
-./libs/tgcli -s ./bot/bot.lua $@
+./keepercli/kp.sh
 let COUNTER=COUNTER+1 
 done
 }
@@ -96,6 +84,7 @@ white "in the Ali3aber Name"
 sudo chmod 777 keepercli/kp.sh
 sudo chmod 777 helpercli/hp.sh
 sudo chmod 777 keepercli/libs/tgcli
+sudo chmod 777 helpercli/libs/tgcli
 sudo apt-get update
 sudo apt-get upgrade
 if [ "$1" = "keeper" ]; then
