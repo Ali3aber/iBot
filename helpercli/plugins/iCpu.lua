@@ -161,7 +161,7 @@ end
 else
     return tdcli.sendMessage(arg.chat_id, "", 0, "`تمام ادمین های گروه به مقام مدیر منتصب شدند و سازنده گروه به مقام مالک گروه منتصب شد`👤😎", 0, "md")
      end
- end
+
 if (matches[1]:lower() == "setlang") and is_owner(msg) then
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -176,7 +176,7 @@ local lang = redis:get(hash)
  redis:del(hash)
 return "_Group Language Set To:_ EN"
 end
- 
+ end
 ----------------------------------------
 return {
 patterns ={
