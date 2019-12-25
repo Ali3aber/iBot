@@ -81,7 +81,7 @@ function create_config( )
     "iAdmin",
 "iClean-X2",
 "iHelp",
-"iCpu"
+"iCpu",
 "iMsgCpu",
 "iOC"
 	},
