@@ -154,7 +154,7 @@ Beta Version Dont Have This Option
 💢*چنل  :* ]]..check_markdown(MaTaDoRch)..[[
 ]]
 ,
-helpfun = [[
+helpclean = [[
 Beta Version Dont Have This Option
 🎭*ادمین ربات :* ]]..check_markdown(MaTaDoRby)..[[
 
